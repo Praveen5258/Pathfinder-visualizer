@@ -1,0 +1,123 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f0;
+}
+
+header {
+    margin-top: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.controls button {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #34495e;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.controls button:hover {
+    background-color: #2c3e50;
+}
+
+.legend {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* --- THE GRID --- */
+#grid-container {
+    display: grid;
+    /* 50 columns, each 25px wide */
+    grid-template-columns: repeat(50, 25px);
+    background-color: white;
+    border: 1px solid #34495e;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.node {
+    width: 25px;
+    height: 25px;
+    border: 1px solid rgb(175, 216, 248);
+    box-sizing: border-box; /* Ensures border doesn't add to width */
+}
+
+/* --- NODE STATES --- */
+.node-start {
+    background-color: green;
+}
+
+.node-target {
+    background-color: red;
+}
+
+.node-wall {
+    background-color: #2c3e50;
+    border: 1px solid #2c3e50;
+}
+
+/* Animation for visited nodes (The "Ripple") */
+.node-visited {
+    animation-name: visitedAnimation;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-delay: 0;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+
+@keyframes visitedAnimation {
+    0% {
+        transform: scale(0.3);
+        background-color: rgba(0, 0, 66, 0.75);
+        border-radius: 100%;
+    }
+    50% {
+        background-color: rgba(17, 104, 217, 0.75);
+    }
+    100% {
+        transform: scale(1);
+        background-color: rgba(0, 190, 218, 0.75);
+    }
+}
+
+/* Animation for the shortest path (The "Snake") */
+.node-path {
+    animation-name: shortestPathAnimation;
+    animation-duration: 1.5s;
+    animation-timing-function: ease-out;
+    animation-delay: 0;
+    animation-direction: alternate;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-play-state: running;
+}
+
+@keyframes shortestPathAnimation {
+    0% {
+        transform: scale(0.6);
+        background-color: rgb(255, 254, 106);
+    }
+    100% {
+        transform: scale(1);
+        background-color: rgb(255, 254, 106);
+    }
+}
