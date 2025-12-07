@@ -41,10 +41,6 @@ That’s it — simple and fun!
 - **HTML5** – Structure  
 - **CSS3** – Styling + animations  
 - **JavaScript (Vanilla)** – Grid logic, BFS algorithm, animations  
-
-No external libraries. No frameworks.  
-Just clean, understandable code.
-
 ---
 
 ## 📚 What You’ll Learn (If You Study The Code)
@@ -70,14 +66,6 @@ Here are some features planned (or you can enhance later):
 
 ---
 
-## 💻 Running Locally
-
-Just open `index.html` in your browser.  
-No setup required.
-
-Or use GitHub Pages to host the project online.
-
----
 
 
 
